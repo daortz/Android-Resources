@@ -12,12 +12,15 @@ adb shell am start -n package-name/activity-name  -es "destinationUrl" "www.goog
 
 adb shell am start -W -a android.intent.action.VIEW -d "schema://host/"  package-name
 
-# Install FRIDA
+## Install FRIDA
 
-$ adb root # might be required
-$ adb push frida-server /data/local/tmp/
-$ adb shell "chmod 755 /data/local/tmp/frida-server"
-$ adb shell "/data/local/tmp/frida-server &"
+adb root # might be required
+
+adb push frida-server /data/local/tmp/
+
+adb shell "chmod 755 /data/local/tmp/frida-server"
+
+adb shell "/data/local/tmp/frida-server &"
 
 
 # find dangerous JS functions 
